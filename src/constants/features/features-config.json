@@ -4,13 +4,15 @@
       "ENABLED_TABS_MARKETS": true,
       "ENABLED_TABS_SWAP": true,
       "ENABLED_TABS_SPOT": true,
-      "ENABLED_TABS_CREATE": true,
-      "ENABLED_TABS_FAUCET": true,
-      "COMING_SOON_PERPETUAL": false,
+      "ENABLED_TABS_CREATE": false,
+      "ENABLED_TABS_FAUCET": false,
+      "COMING_SOON_PERPETUAL": true,
       "LANDING_PAGE_RISE": true,
       "LANDING_PAGE_PHAROS": true,
       "ENABLED_TABS_EARN": true,
       "ENABLED_TABS_VEGTX": true,
-      "ENABLED_TABS_PERPETUAL": true
+      "ENABLED_TABS_PERPETUAL": true,
+      "COMING_SOON_EARN": true,
+      "COMING_SOON_VEGTX": true
     }
   }

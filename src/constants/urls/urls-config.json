@@ -1,9 +1,9 @@
 {
   "INDEXER_URLS": {
-    "80000": "http://localhost:4001"
+    "80000": "https://orbex-gateway-api.paxeer.app"
   },
   "WEBSOCKET_URLS": {
-    "80000": "ws://localhost:4001"
+    "80000": "wss://orbex-gateway-api.paxeer.app"
   },
   "EXPLORER_URLS": {
     "80000": "https://paxscan.paxeer.app/tx/"

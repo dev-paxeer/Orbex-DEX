@@ -66,8 +66,8 @@ const Footer = () => {
           {/* Logo Section */}
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-2">
-              <img src={"/logo/PrimeLogo.png"} className="h-10" alt="PrimeSwap Logo" />
-              <span className="text-3xl font-bold text-white">PrimeSwap</span>
+              <img src={"/logo/PrimeLogo.png"} className="h-10" alt="Orbex Logo" />
+              <span className="text-3xl font-bold text-white">Orbex</span>
             </Link>
             <p className="mt-4 text-gray-400 text-sm leading-relaxed">
               Experience the power of permissionless spot trading.

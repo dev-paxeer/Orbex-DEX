@@ -91,10 +91,10 @@ const Header = () => {
               href={link.destination}
               className={cn(
                 "text-sm lg:text-md px-4 py-1 rounded-lg transition-all whitespace-nowrap",
-                "hover:bg-[#0064A7]/10 hover:text-[#0064A7]",
+                "hover:bg-[#b979f0]/10 hover:text-[#b979f0]",
                 "dark:hover:bg-white/10 dark:hover:text-white",
                 "text-white",
-                pathname === link.destination && "bg-[#0064A7]/10 text-[#0064A7] dark:bg-white/10 dark:text-white"
+                pathname === link.destination && "bg-[#b979f0]/10 text-[#b979f0] dark:bg-white/10 dark:text-white"
               )}
             >
               {link.label}
@@ -134,7 +134,7 @@ const Header = () => {
                           variant="ghost"
                           className={cn(
                             "w-full justify-start font-medium whitespace-nowrap",
-                            pathname === link.destination && "bg-[#0064A7]/10 text-[#0064A7] dark:bg-white/10 dark:text-white"
+                            pathname === link.destination && "bg-[#b979f0]/10 text-[#b979f0] dark:bg-white/10 dark:text-white"
                           )}
                         >
                           {link.label}
