@@ -1,0 +1,16 @@
+{
+    "USE_SUBGRAPH": false,
+    "FEATURE_FLAGS": {
+      "ENABLED_TABS_MARKETS": true,
+      "ENABLED_TABS_SWAP": true,
+      "ENABLED_TABS_SPOT": true,
+      "ENABLED_TABS_CREATE": true,
+      "ENABLED_TABS_FAUCET": true,
+      "COMING_SOON_PERPETUAL": false,
+      "LANDING_PAGE_RISE": true,
+      "LANDING_PAGE_PHAROS": true,
+      "ENABLED_TABS_EARN": true,
+      "ENABLED_TABS_VEGTX": true,
+      "ENABLED_TABS_PERPETUAL": true
+    }
+  }

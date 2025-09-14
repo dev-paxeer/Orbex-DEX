@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.12)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.04)"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+  <rect width="100%" height="100%" fill="url(#fade)"/>
+  <!-- subtle nodes -->
+  <g fill="rgba(255,255,255,0.06)">
+    <circle cx="40" cy="48" r="2"/>
+    <circle cx="120" cy="24" r="1.5"/>
+    <circle cx="200" cy="60" r="2"/>
+    <circle cx="88" cy="120" r="1.5"/>
+    <circle cx="160" cy="160" r="2"/>
+    <circle cx="32" cy="200" r="1.5"/>
+    <circle cx="220" cy="200" r="1.5"/>
+  </g>
+</svg>

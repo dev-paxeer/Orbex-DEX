@@ -1,0 +1,11 @@
+{
+  "INDEXER_URLS": {
+    "80000": "http://localhost:4001"
+  },
+  "WEBSOCKET_URLS": {
+    "80000": "ws://localhost:4001"
+  },
+  "EXPLORER_URLS": {
+    "80000": "https://paxscan.paxeer.app/tx/"
+  }
+}
