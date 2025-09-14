@@ -3,8 +3,14 @@ import { getMarketDataApiUrl } from '@/constants/api-config';
 
 // Create a function to get API client for specific chain
 export function getApiClient(chainId: string | number): AxiosInstance {
+  // In the browser, route requests to our Next.js API routes (same-origin)
+  // to avoid CORS issues when talking to external gateways. On the server,
+  // we can safely call the external gateway directly.
+  const isBrowser = typeof window !== 'undefined';
+  const baseURL = isBrowser ? '' : getMarketDataApiUrl(chainId);
+
   const apiClient: AxiosInstance = axios.create({
-    baseURL: getMarketDataApiUrl(chainId),
+    baseURL,
     timeout: 10000,
     headers: {
       'Content-Type': 'application/json',
@@ -14,7 +20,7 @@ export function getApiClient(chainId: string | number): AxiosInstance {
 
   // Request interceptor
   apiClient.interceptors.request.use(
-    (config: InternalAxiosRequestConfig<any> | Promise<InternalAxiosRequestConfig<any>>) => {
+    (config: InternalAxiosRequestConfig<any>) => {
       if (process.env.NODE_ENV === 'development') {
         console.log(`API Request [Chain ${chainId}]: ${config.method?.toUpperCase()} ${config.url}`);
       }
@@ -30,7 +36,7 @@ export function getApiClient(chainId: string | number): AxiosInstance {
 
   // Response interceptor
   apiClient.interceptors.response.use(
-    (response: AxiosResponse<any, any> | Promise<AxiosResponse<any, any>>) => {
+    (response: AxiosResponse<any, any>) => {
       if (process.env.NODE_ENV === 'development') {
         console.log(`API Response [Chain ${chainId}]: ${response.status} ${response.config.url}`);
       }

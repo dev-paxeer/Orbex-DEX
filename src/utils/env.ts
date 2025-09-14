@@ -13,6 +13,10 @@ const getChainIdStr = (chainId?: number): string => {
 export const getGraphQLUrl = (chainId?: number): string => {
     try {
         const chainIdStr = getChainIdStr(chainId);
+        // In the browser, route GraphQL through our Next API to avoid CORS
+        if (typeof window !== 'undefined') {
+            return `/api/gql?chainId=${encodeURIComponent(chainIdStr)}`;
+        }
         const base = getIndexerUrl(chainIdStr);
         // Ensure GraphQL client hits the proper endpoint (gateway or indexer)
         return base.replace(/\/+$/, '') + '/graphql';
