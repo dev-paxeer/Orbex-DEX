@@ -25,25 +25,35 @@ export const WEBSOCKET_URLS = typedUrlsConfig.WEBSOCKET_URLS;
 // Helper function to get indexer URL by chain ID
 export function getIndexerUrl(chainId: string | number): string {
     const chainIdString = chainId.toString();
+    // Prefer chain-specific env override, then base override, then JSON config
+    const specificEnvKey = `NEXT_PUBLIC_CLOB_${chainIdString}_INDEXER_URL` as keyof NodeJS.ProcessEnv;
+    const envUrl = process.env[specificEnvKey] || process.env.NEXT_PUBLIC_INDEXER_BASE_URL;
+    if (envUrl && typeof envUrl === 'string') {
+        return envUrl.replace(/\/+$/, '');
+    }
+
     const url = INDEXER_URLS[chainIdString];
-    
     if (!url) {
         throw new Error(`Indexer URL for chain ID ${chainIdString} not found in configuration`);
     }
-    
-    return url;
+    return url.replace(/\/+$/, '');
 }
 
 // Helper function to get websocket URL by chain ID
 export function getWebsocketUrl(chainId: string | number): string {
     const chainIdString = chainId.toString();
+    // Prefer chain-specific env override, then base override, then JSON config
+    const specificEnvKey = `NEXT_PUBLIC_WS_${chainIdString}_URL` as keyof NodeJS.ProcessEnv;
+    const envUrl = process.env[specificEnvKey] || process.env.NEXT_PUBLIC_WEBSOCKET_BASE_URL;
+    if (envUrl && typeof envUrl === 'string') {
+        return envUrl.replace(/\/+$/, '');
+    }
+
     const url = WEBSOCKET_URLS[chainIdString];
-    
     if (!url) {
         throw new Error(`Websocket URL for chain ID ${chainIdString} not found in configuration`);
     }
-    
-    return url;
+    return url.replace(/\/+$/, '');
 }
 
 // Helper function to get explorer URL by chain ID
